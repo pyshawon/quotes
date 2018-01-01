@@ -1,0 +1,13 @@
+# Windows image file caches
+Thumbs.db
+
+*.pyc
+*.egg-info
+
+.vagrant
+.idea/
+*.*~
+*.css.map
+.DS_Store
+
+node_modules/
