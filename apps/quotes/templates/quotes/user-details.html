@@ -22,6 +22,21 @@
   </script>
 </head>
 <body>
-{% block content %}{% endblock %}
+<div class="user-data">
+	<p>Posted By {{ userinfo }}</p>
+	<p>Count : {{ user_quotes.count }}</p>
+	<div class="user-action" style="float: right; margin-right: 100px;margin-top: -40px;">
+	<a href="{% url 'quotes' %}">Dashboard</a>
+	<a>|</a>
+	<a href="{% url 'logout' %}">Logout</a>
+	</div>
+
+<br>
+<div class="quotes" style="width:700px;">
+	{% for qt in user_quotes %}
+<p><span style="color: red;">{{ qt.quoted_by }} :</span> {{ qt.message }}</p>
+{% endfor %}
+</div>
+</div>
 </body>
 </html>

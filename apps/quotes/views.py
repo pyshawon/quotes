@@ -24,12 +24,12 @@ def Home(request):
 	"reg": SignUpForm(),
 	"title":"Login/Registration"
 	}
-	return render(request, "home.html", context)
+	return render(request, "quotes/home.html", context)
 
 
 class QuotesCreate(CreateView):
 	form_class = QuoteForm
-	template_name = 'quotes.html'
+	template_name = 'quotes/quotes.html'
 	success_url = "/quotes/"
 
 	def form_valid(self, form, *args, **kwargs):
@@ -67,7 +67,7 @@ def RemoveToFavorite(request, id=None):
 
 class UserDetails(DetailView):
 	model = User
-	template_name = 'user-details.html'
+	template_name = 'quotes/user-details.html'
 
 	def get_context_data(self, *args, **kwargs):
 		context = super(UserDetails, self).get_context_data(*args, **kwargs)

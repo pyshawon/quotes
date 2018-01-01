@@ -23,7 +23,7 @@ def signup(request):
 			return redirect('quotes')
 	else:
 		form = SignUpForm()
-	return render(request, 'signup.html', {'form': form})
+	return render(request, 'accounts/signup.html', {'form': form})
 
 
 def login_view(request):
@@ -37,7 +37,7 @@ def login_view(request):
     context = {
         "form": form,
     }
-    return render(request, "login.html", context)
+    return render(request, "accounts/login.html", context)
 
 
 def logout_view(request):
